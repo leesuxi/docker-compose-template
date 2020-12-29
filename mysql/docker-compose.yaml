@@ -1,0 +1,20 @@
+#mysql容器
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    container_name: mysql-test #容器名称
+    image: mysql #镜像
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - "3307:3306" #本机端口：容器端口
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456 #root密码
+      MYSQL_ROOT_HOST: '%' #ip限制
+    volumes: #挂载目录 本机:容器
+      - "/opt/mysql-test/data:/var/lib/mysql"
+      - "/opt/mysql-test/conf:/etc/mysql/conf.d"
+      - "/opt/mysql-test/logs:/var/log/mysql"
