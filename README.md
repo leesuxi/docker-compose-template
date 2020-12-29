@@ -1,6 +1,7 @@
 # docker-compose 模板
 
 - 创建这个项目的目的：通过简单的修改就能创建docker容器
+- 如果您喜欢这个项目不妨点点Star就是对我最好的支持
 
 ## docker-compose 安装
 
